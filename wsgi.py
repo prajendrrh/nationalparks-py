@@ -11,7 +11,8 @@ from pymongo import MongoClient, GEO2D
 
 DB_URI = os.environ.get('DB_URI')
 
-DB_HOST = os.environ.get('DB_HOST', 'mongodb-nationalparks')
+DB_HOST = os.environ.get('MONGODB_SERVER_HOST', 'mongodb')
+DB_PORT = os.environ.get('MONGODB_SERVER_PORT', '27017')
 DB_SERVICE_NAME = os.environ.get('DATABASE_SERVICE_NAME')
 
 if os.environ.get('uri'):
@@ -29,8 +30,8 @@ DB_USERNAME = os.environ.get('MONGODB_USERNAME', 'mongodb')
 DB_PASSWORD = os.environ.get('MONGODB_PASSWORD', 'mongodb')
 
 if not DB_URI:
-    DB_URI = 'mongodb://%s:%s@%s:27017/%s' % (DB_USERNAME, DB_PASSWORD,
-            DB_HOST, DB_NAME)
+    DB_URI = 'mongodb://%s:%s@%s:%s/%s' % (DB_USERNAME, DB_PASSWORD,
+            DB_HOST, DB_PORT, DB_NAME)
 
 DATASET_FILE = 'nationalparks.json'
 
