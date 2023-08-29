@@ -26,7 +26,7 @@ if DB_SERVICE_NAME:
     
 DB_NAME = os.environ.get('MONGODB_DATABASE', 'mongodb')
 
-DB_USERNAME = os.environ.get('MONGODB_USERNAME', 'mongodb')
+DB_USERNAME = os.environ.get('MONGODB_USER', 'mongodb')
 DB_PASSWORD = os.environ.get('MONGODB_PASSWORD', 'mongodb')
 
 if not DB_URI:
