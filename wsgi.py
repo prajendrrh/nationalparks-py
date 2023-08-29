@@ -35,6 +35,8 @@ if not DB_URI:
 
 DATASET_FILE = 'nationalparks.json'
 
+print(f"Connecting with {DB_URI} to database {DB_NAME}")
+
 application = Flask(__name__)
 
 api = Api(application)
